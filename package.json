@@ -1,6 +1,6 @@
 {
   "name": "cross-keyboard-values",
-  "version": "0.0.4-alpha",
+  "version": "0.0.5-alpha",
   "description": "Getting the desired text on different keyboard layouts",
   "main": "dist/index.js",
   "files": [
