@@ -6,7 +6,7 @@ export interface ILayout {
 	'!': string;
 	'@': string;
 	'#': string;
-	'$': string;
+	$: string;
 	'%': string;
 	'^': string;
 	'&': string;

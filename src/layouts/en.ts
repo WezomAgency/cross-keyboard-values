@@ -6,7 +6,7 @@ const layout: Partial<ILayout> = {
 	'~': '~',
 	'@': '@',
 	'#': '#',
-	'$': '$',
+	$: '$',
 	'^': '^',
 	'&': '&',
 
@@ -78,13 +78,7 @@ const layout: Partial<ILayout> = {
 	N: 'N',
 	M: 'M',
 	'<': '<',
-	'>': '>',
+	'>': '>'
 };
 
 export default layout;
-
-
-
-
-
-
