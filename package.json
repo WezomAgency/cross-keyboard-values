@@ -1,0 +1,24 @@
+{
+  "name": "cross-keyboard-values",
+  "version": "0.0.1-alpha",
+  "description": "Getting the desired text on different keyboard layouts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WezomAgency/cross-keyboard-values.git"
+  },
+  "keywords": [
+    "keyboard",
+    "switch",
+    "values"
+  ],
+  "author": "Oleg Dutchenko <dutchenko.o.dev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WezomAgency/cross-keyboard-values/issues"
+  },
+  "homepage": "https://github.com/WezomAgency/cross-keyboard-values#readme"
+}
