@@ -69,13 +69,18 @@ export default (...layouts: Partial<ILayout>[]) => {
 	return (original: string): string[] => {
 		const letters = original.split('');
 		const length = letters.length;
-		const values: string[] = [];
+		let values: string[] = [];
 
 		const _addValues = (value: string[]) => {
 			if (values.length === 0) {
 				values.push(...value);
 			} else {
-				let vLength = value.length;
+				const variants = values
+					.map((v1) => value.map((v2) => v1 + v2))
+					.reduce((acc, arr) => acc.concat(arr), []);
+				values = variants.filter((v, i) => variants.indexOf(v) === i);
+				console.log(variants);
+				/*let vLength = value.length;
 				let vsLength = values.length;
 				if (vsLength < vLength) {
 					console.log('vs');
@@ -100,7 +105,7 @@ export default (...layouts: Partial<ILayout>[]) => {
 				vLength = value.length;
 				for (let i = 0; i < vLength; i++) {
 					values[i] = values[i] + value[i];
-				}
+				}*/
 			}
 		};
 

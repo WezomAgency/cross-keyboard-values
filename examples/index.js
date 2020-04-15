@@ -97,32 +97,37 @@
                     values.push.apply(values, value);
                 }
                 else {
-                    var vLength = value.length;
-                    var vsLength = values.length;
+                    var variants_1 = values
+                        .map(function (v1) { return value.map(function (v2) { return v1 + v2; }); })
+                        .reduce(function (acc, arr) { return acc.concat(arr); }, []);
+                    values = variants_1.filter(function (v, i) { return variants_1.indexOf(v) === i; });
+                    console.log(variants_1);
+                    /*let vLength = value.length;
+                    let vsLength = values.length;
                     if (vsLength < vLength) {
                         console.log('vs');
                         // _grow(vsLength, vLength, values);
-                        var last = values[vsLength - 1];
-                        var diffLength = vLength - vsLength;
+                        const last = values[vsLength - 1];
+                        const diffLength = vLength - vsLength;
                         console.log(diffLength);
-                        for (var i = 0; i < diffLength; i++) {
+                        for (let i = 0; i < diffLength; i++) {
                             values.push(last);
                         }
-                    }
-                    else if (vLength < vsLength) {
+                    } else if (vLength < vsLength) {
                         console.log('v');
                         // _grow(vLength, vsLength, value);
-                        var last = value[vLength - 1];
-                        var diffLength = vsLength - vLength;
-                        for (var i = 0; i < diffLength; i++) {
+                        const last = value[vLength - 1];
+                        const diffLength = vsLength - vLength;
+                        for (let i = 0; i < diffLength; i++) {
                             value.push(last);
                         }
                     }
+
                     console.log(value, values);
                     vLength = value.length;
-                    for (var i = 0; i < vLength; i++) {
+                    for (let i = 0; i < vLength; i++) {
                         values[i] = values[i] + value[i];
-                    }
+                    }*/
                 }
             };
             for (var i = 0; i < length; i++) {
@@ -376,11 +381,12 @@
     var $input = document.getElementById('input');
     var $output = document.getElementById('output');
     if ($input != null && $output != null) {
-        $input.addEventListener('keyup', function () {
+        var handleKeyup = function () {
             var values = getValues($input.value);
-            // console.log(values);
             $output.textContent = JSON.stringify(values, undefined, '  ');
-        });
+        };
+        $input.addEventListener('keyup', handleKeyup);
+        handleKeyup();
     }
 
 }());
