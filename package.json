@@ -1,8 +1,7 @@
 {
   "name": "cross-keyboard-values",
-  "version": "0.0.8-alpha",
+  "version": "0.0.9-alpha",
   "description": "Getting the desired text on different keyboard layouts",
-  "main": "dist/index.js",
   "files": [
     "dist"
   ],
@@ -10,6 +9,7 @@
     "build": "rollup -c",
     "prebuild": "del-cli ./dist",
     "examples": "rollup -c ./rollup.config.examples.js",
+    "watch": "npm run examples -- --watch",
     "test": "npm run prettier && npm run eslint",
     "fix": "npm run prettier -- --write && npm run eslint -- --fix",
     "eslint": "eslint ./src/**/*.ts --cache --cache-location ./.cache/.eslint",

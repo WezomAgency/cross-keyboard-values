@@ -5,16 +5,54 @@ html {
 
 hr {
 	border-width: 0;
-	border-bottom: 1px solid rgba(0,0,0,0.25);
+	border-bottom: 1px solid hsla(0, 0%, 0%, 0.25);
+	margin: 4rem 0;
 }
 
 pre {
 	background: hsl(208, 35%, 92%);
 	font-family: monospace, monospace;
 	padding: 1rem;
+	border-radius: 0.125rem;
+}
+
+input {
+	padding: 0.5rem;
+	border: 1px solid hsla(0, 0%, 0%, 0.25);
+	border-radius: 0.125rem;
+}
+
+details {
+	margin-bottom: 1rem;
+}
+
+summary {
+	cursor: pointer;
+	padding: 0.25rem 0.25rem 0.25rem 0;
+	border-radius: 0.125rem;
+}
+
+summary:hover {
+	background: hsl(208, 35%, 92%);
+}
+
+h2:target {
+	background: yellow;
+}
+
+a {
+	color: hsl(240, 100%, 47%);
+}
+
+a:hover {
+	color: hsl(0, 100%, 50%);
+}
+
+a:active {
+	color: hsl(0, 0%, 0%);
 }
 
 .center {
-	max-width: 60rem;
-	margin: 0 auto;
+	max-width: 50rem;
+	margin: 0 auto 6rem;
 }

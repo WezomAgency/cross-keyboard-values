@@ -11,12 +11,51 @@
 		<link rel="stylesheet" href="examples/style.css" />
 	</head>
 	<body>
-		<div class="center">
+		<main class="center">
 			<h1>cross-keyboard-values</h1>
+			<p><em>Getting the desired text on different keyboard layouts</em></p>
+
 			<hr />
-			<input type="text" id="input" />
-			<pre id="output"></pre>
-		</div>
+
+			<h2 id="en-uk">
+				<a href="#en-uk" aria-hidden="true">#</a>
+				<label for="input-en-uk">EN - UK</label>
+			</h2>
+			<input type="text" id="input-en-uk" />
+			<pre id="output-en-uk"></pre>
+			<details>
+				<summary><code>import layout</code></summary>
+				<pre>import crossKeyboardValues from './layouts/en-uk';</pre>
+			</details>
+
+			<hr />
+
+			<h2 id="en-ru">
+				<a href="#en-ru" aria-hidden="true">#</a>
+				<label for="input-en-ru">EN - RU</label>
+			</h2>
+			<input type="text" id="input-en-ru" />
+			<pre id="output-en-ru"></pre>
+			<details>
+				<summary><code>import layout</code></summary>
+				<pre>import crossKeyboardValues from './layouts/en-ru';</pre>
+			</details>
+
+			<hr />
+
+			<h2 id="en-uk-ru">
+				<a href="#en-uk-ru" aria-hidden="true">#</a>
+				<label for="input-en-uk-ru">EN - UK - RU</l
+					abel></h2>
+			<input type="text" id="input-en-uk-ru" />
+			<pre id="output-en-uk-ru"></pre>
+			<details>
+				<summary><code>import layout</code></summary>
+				<pre>import crossKeyboardValues from './layouts/en-uk-ru';</pre>
+			</details>
+
+			<hr />
+		</main>
 		<script src="examples/index.js"></script>
 	</body>
 </html>

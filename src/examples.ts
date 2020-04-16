@@ -1,17 +1,36 @@
-import crossKeyboardValues from './index';
-import en from './layouts/en';
-import uk from './layouts/uk';
-import ru from './layouts/ru';
+// -----------------------------------------------------------------------------
+// Deps
+// -----------------------------------------------------------------------------
 
-const getValues = crossKeyboardValues(uk, ru, en);
+import enUk from './layouts/en-uk';
+import enRu from './layouts/en-ru';
+import enUkRu from './layouts/en-uk-ru';
 
-const $input = document.getElementById('input') as HTMLInputElement | null;
-const $output = document.getElementById('output') as HTMLPreElement | null;
-if ($input != null && $output != null) {
-	const handleKeyup = () => {
-		const values = getValues($input.value);
-		$output.textContent = JSON.stringify(values, undefined, '  ');
-	};
-	$input.addEventListener('keyup', handleKeyup);
-	handleKeyup();
-}
+// -----------------------------------------------------------------------------
+// Demo helper
+// -----------------------------------------------------------------------------
+
+const example = (
+	getValuesFn: (value: string) => string[],
+	inputId: string,
+	outputId: string
+) => {
+	const $input = document.getElementById(inputId) as HTMLInputElement | null;
+	const $output = document.getElementById(outputId) as HTMLPreElement | null;
+	if ($input != null && $output != null) {
+		const handleKeyup = () => {
+			const values = getValuesFn($input.value);
+			$output.textContent = JSON.stringify(values, undefined, '  ');
+		};
+		$input.addEventListener('keyup', handleKeyup);
+		handleKeyup();
+	}
+};
+
+// -----------------------------------------------------------------------------
+// Initialize
+// -----------------------------------------------------------------------------
+
+example(enUk, 'input-en-uk', 'output-en-uk');
+example(enRu, 'input-en-ru', 'output-en-ru');
+example(enUkRu, 'input-en-uk-ru', 'output-en-uk-ru');

@@ -1,393 +1,516 @@
 (function () {
-    'use strict';
+	'use strict';
 
-    /*! *****************************************************************************
-    Copyright (c) Microsoft Corporation. All rights reserved.
-    Licensed under the Apache License, Version 2.0 (the "License"); you may not use
-    this file except in compliance with the License. You may obtain a copy of the
-    License at http://www.apache.org/licenses/LICENSE-2.0
+	var alternativeValues = (function (keys) { return function (origin) {
+	    var alternative1 = '';
+	    origin.split('').forEach(function (key) {
+	        if (keys.hasOwnProperty(key)) {
+	            var letter1 = keys[key][0];
+	            alternative1 += letter1;
+	        }
+	        else {
+	            alternative1 += key;
+	        }
+	    });
+	    return [origin, alternative1];
+	}; });
 
-    THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-    KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
-    WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
-    MERCHANTABLITY OR NON-INFRINGEMENT.
+	// -----------------------------------------------------------------------------
+	// -----------------------------------------------------------------------------
+	// Keys
+	// -----------------------------------------------------------------------------
+	var keys = {
+	    // row 0
+	    '`': [''],
+	    '~': ['₴'],
+	    '#': ['№'],
+	    '$': [';'],
+	    '@': ['"'],
+	    '^': [':'],
+	    '₴': ['~'],
+	    // row 1
+	    q: ['й'],
+	    w: ['ц'],
+	    e: ['у'],
+	    r: ['к'],
+	    t: ['е'],
+	    y: ['н'],
+	    u: ['г'],
+	    i: ['ш'],
+	    o: ['щ'],
+	    p: ['з'],
+	    '[': ['х'],
+	    ']': ['ї'],
+	    Q: ['Й'],
+	    W: ['Ц'],
+	    E: ['У'],
+	    R: ['К'],
+	    T: ['Е'],
+	    Y: ['Н'],
+	    U: ['Г'],
+	    I: ['Ш'],
+	    O: ['Щ'],
+	    P: ['З'],
+	    '{': ['Х'],
+	    '}': ['Ї'],
+	    ц: ['w'],
+	    у: ['e'],
+	    к: ['r'],
+	    е: ['t'],
+	    н: ['y'],
+	    г: ['u'],
+	    ш: ['i'],
+	    щ: ['o'],
+	    з: ['p'],
+	    х: ['['],
+	    ї: [']'],
+	    Ц: ['W'],
+	    У: ['E'],
+	    К: ['R'],
+	    Е: ['T'],
+	    Н: ['Y'],
+	    Г: ['U'],
+	    Ш: ['I'],
+	    Щ: ['O'],
+	    З: ['P'],
+	    Х: ['{'],
+	    Ї: ['}'],
+	    // row 2
+	    a: ['ф'],
+	    s: ['і'],
+	    d: ['в'],
+	    f: ['а'],
+	    g: ['п'],
+	    h: ['р'],
+	    j: ['о'],
+	    k: ['л'],
+	    l: ['д'],
+	    ';': ['ж'],
+	    "'": ['є'],
+	    A: ['Ф'],
+	    S: ['І'],
+	    D: ['В'],
+	    F: ['А'],
+	    G: ['П'],
+	    H: ['Р'],
+	    J: ['О'],
+	    K: ['Л'],
+	    L: ['Д'],
+	    ':': ['Ж'],
+	    '"': ['Є'],
+	    ф: ['a'],
+	    і: ['s'],
+	    в: ['d'],
+	    а: ['f'],
+	    п: ['g'],
+	    р: ['h'],
+	    о: ['j'],
+	    л: ['k'],
+	    д: ['l'],
+	    ж: [';'],
+	    є: ["'"],
+	    Ф: ['A'],
+	    І: ['S'],
+	    В: ['D'],
+	    А: ['F'],
+	    П: ['G'],
+	    Р: ['H'],
+	    О: ['J'],
+	    Л: ['K'],
+	    Д: ['L'],
+	    Ж: [':'],
+	    Є: ['"'],
+	    '|': ['/'],
+	    // row 3
+	    z: ['я'],
+	    x: ['ч'],
+	    c: ['с'],
+	    v: ['м'],
+	    b: ['и'],
+	    n: ['т'],
+	    m: ['ь'],
+	    ',': ['б'],
+	    '.': ['ю'],
+	    Z: ['Я'],
+	    X: ['Ч'],
+	    C: ['С'],
+	    V: ['М'],
+	    B: ['И'],
+	    N: ['Т'],
+	    M: ['Ь'],
+	    '<': ['Б'],
+	    '>': ['Ю'],
+	    я: ['z'],
+	    ч: ['x'],
+	    с: ['c'],
+	    м: ['v'],
+	    и: ['b'],
+	    т: ['n'],
+	    ь: ['m'],
+	    б: [','],
+	    ю: ['.'],
+	    ё: ['`'],
+	    Я: ['Z'],
+	    Ч: ['X'],
+	    С: ['C'],
+	    М: ['V'],
+	    И: ['B'],
+	    Т: ['N'],
+	    Ь: ['M'],
+	    Б: [','],
+	    Ю: ['.']
+	};
+	// -----------------------------------------------------------------------------
+	// Export
+	// -----------------------------------------------------------------------------
+	var enUk = alternativeValues(keys);
 
-    See the Apache Version 2.0 License for specific language governing permissions
-    and limitations under the License.
-    ***************************************************************************** */
+	// -----------------------------------------------------------------------------
+	// -----------------------------------------------------------------------------
+	// Keys
+	// -----------------------------------------------------------------------------
+	var keys$1 = {
+	    // row 0
+	    '`': ['ё'],
+	    '~': ['Ё'],
+	    '#': ['№'],
+	    '$': [';'],
+	    '@': ['"'],
+	    '^': [':'],
+	    Ё: ['~'],
+	    // row 1
+	    q: ['й'],
+	    w: ['ц'],
+	    e: ['у'],
+	    r: ['к'],
+	    t: ['е'],
+	    y: ['н'],
+	    u: ['г'],
+	    i: ['ш'],
+	    o: ['щ'],
+	    p: ['з'],
+	    '[': ['х'],
+	    ']': ['ъ'],
+	    Q: ['Й'],
+	    W: ['Ц'],
+	    E: ['У'],
+	    R: ['К'],
+	    T: ['Е'],
+	    Y: ['Н'],
+	    U: ['Г'],
+	    I: ['Ш'],
+	    O: ['Щ'],
+	    P: ['З'],
+	    '{': ['Х'],
+	    '}': ['Ъ'],
+	    ц: ['w'],
+	    у: ['e'],
+	    к: ['r'],
+	    е: ['t'],
+	    н: ['y'],
+	    г: ['u'],
+	    ш: ['i'],
+	    щ: ['o'],
+	    з: ['p'],
+	    х: ['['],
+	    ъ: [']'],
+	    Ц: ['W'],
+	    У: ['E'],
+	    К: ['R'],
+	    Е: ['T'],
+	    Н: ['Y'],
+	    Г: ['U'],
+	    Ш: ['I'],
+	    Щ: ['O'],
+	    З: ['P'],
+	    Х: ['{'],
+	    Ъ: ['}'],
+	    // row 2
+	    a: ['ф'],
+	    s: ['ы'],
+	    d: ['в'],
+	    f: ['а'],
+	    g: ['п'],
+	    h: ['р'],
+	    j: ['о'],
+	    k: ['л'],
+	    l: ['д'],
+	    ';': ['ж'],
+	    "'": ['э'],
+	    A: ['Ф'],
+	    S: ['Ы'],
+	    D: ['В'],
+	    F: ['А'],
+	    G: ['П'],
+	    H: ['Р'],
+	    J: ['О'],
+	    K: ['Л'],
+	    L: ['Д'],
+	    ':': ['Ж'],
+	    '"': ['Э'],
+	    ф: ['a'],
+	    ы: ['s'],
+	    в: ['d'],
+	    а: ['f'],
+	    п: ['g'],
+	    р: ['h'],
+	    о: ['j'],
+	    л: ['k'],
+	    д: ['l'],
+	    ж: [';'],
+	    э: ["'"],
+	    Ф: ['A'],
+	    Ы: ['S'],
+	    В: ['D'],
+	    А: ['F'],
+	    П: ['G'],
+	    Р: ['H'],
+	    О: ['J'],
+	    Л: ['K'],
+	    Д: ['L'],
+	    Ж: [':'],
+	    Э: ['"'],
+	    '|': ['/'],
+	    // row 3
+	    z: ['я'],
+	    x: ['ч'],
+	    c: ['с'],
+	    v: ['м'],
+	    b: ['и'],
+	    n: ['т'],
+	    m: ['ь'],
+	    ',': ['б'],
+	    '.': ['ю'],
+	    Z: ['Я'],
+	    X: ['Ч'],
+	    C: ['С'],
+	    V: ['М'],
+	    B: ['И'],
+	    N: ['Т'],
+	    M: ['Ь'],
+	    '<': ['Б'],
+	    '>': ['Ю'],
+	    я: ['z'],
+	    ч: ['x'],
+	    с: ['c'],
+	    м: ['v'],
+	    и: ['b'],
+	    т: ['n'],
+	    ь: ['m'],
+	    б: [','],
+	    ю: ['.'],
+	    ё: ['`'],
+	    Я: ['Z'],
+	    Ч: ['X'],
+	    С: ['C'],
+	    М: ['V'],
+	    И: ['B'],
+	    Т: ['N'],
+	    Ь: ['M'],
+	    Б: [','],
+	    Ю: ['.']
+	};
+	// -----------------------------------------------------------------------------
+	// Export
+	// -----------------------------------------------------------------------------
+	var enRu = alternativeValues(keys$1);
 
-    function __spreadArrays() {
-        for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-        for (var r = Array(s), k = 0, i = 0; i < il; i++)
-            for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-                r[k] = a[j];
-        return r;
-    }
+	var alternativeValues$1 = (function (keys) { return function (origin) {
+	    var alternative1 = '';
+	    var alternative2 = '';
+	    origin.split('').forEach(function (key) {
+	        if (keys.hasOwnProperty(key)) {
+	            var _a = keys[key], letter1 = _a[0], _b = _a[1], letter2 = _b === void 0 ? letter1 : _b;
+	            alternative1 += letter1;
+	            alternative2 += letter2;
+	        }
+	        else {
+	            alternative1 += key;
+	            alternative2 += key;
+	        }
+	    });
+	    return [origin, alternative1, alternative2];
+	}; });
 
-    var crossKeyboardValues = (function () {
-        var layouts = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            layouts[_i] = arguments[_i];
-        }
-        var coreLayout = layouts[0];
-        var keyboard = {};
-        var length = layouts.length;
-        var _addKey = function (key, value) {
-            if (keyboard[key].indexOf(value) < 0) {
-                keyboard[key].push(value);
-            }
-        };
-        var _getFromSiblings = function (current, key) {
-            var values = [];
-            if (length < 2) {
-                return values;
-            }
-            for (var i = 0; i < length; i++) {
-                if (i === current) {
-                    continue;
-                }
-                var value = layouts[i][key];
-                if (value !== undefined) {
-                    values.push(value);
-                }
-            }
-            return values;
-        };
-        for (var key in coreLayout) {
-            if (coreLayout.hasOwnProperty(key)) {
-                if (!keyboard.hasOwnProperty(key)) {
-                    keyboard[key] = [];
-                }
-            }
-        }
-        for (var i = 0; i < length; i++) {
-            var layout = layouts[i];
-            for (var key in layout) {
-                if (layout.hasOwnProperty(key)) {
-                    var value = layout[key];
-                    if (value !== key) {
-                        if (keyboard.hasOwnProperty(key)) {
-                            _addKey(key, value);
-                        }
-                        if (value.length) {
-                            if (!keyboard.hasOwnProperty(value)) {
-                                keyboard[value] = [];
-                            }
-                            _addKey(value, key);
-                            var siblings = _getFromSiblings(i, key);
-                            var sLength = siblings.length;
-                            for (var s = 0; s < sLength; s++) {
-                                var sValue = siblings[s];
-                                if (sValue !== key) {
-                                    _addKey(value, sValue);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        // console.log(keyboard);
-        return function (original) {
-            var letters = original.split('');
-            var length = letters.length;
-            var values = [];
-            var _addValues = function (value) {
-                if (values.length === 0) {
-                    values.push.apply(values, value);
-                }
-                else {
-                    var variants_1 = values
-                        .map(function (v1) { return value.map(function (v2) { return v1 + v2; }); })
-                        .reduce(function (acc, arr) { return acc.concat(arr); }, []);
-                    values = variants_1.filter(function (v, i) { return variants_1.indexOf(v) === i; });
-                    console.log(variants_1);
-                    /*let vLength = value.length;
-                    let vsLength = values.length;
-                    if (vsLength < vLength) {
-                        console.log('vs');
-                        // _grow(vsLength, vLength, values);
-                        const last = values[vsLength - 1];
-                        const diffLength = vLength - vsLength;
-                        console.log(diffLength);
-                        for (let i = 0; i < diffLength; i++) {
-                            values.push(last);
-                        }
-                    } else if (vLength < vsLength) {
-                        console.log('v');
-                        // _grow(vLength, vsLength, value);
-                        const last = value[vLength - 1];
-                        const diffLength = vsLength - vLength;
-                        for (let i = 0; i < diffLength; i++) {
-                            value.push(last);
-                        }
-                    }
+	// -----------------------------------------------------------------------------
+	// -----------------------------------------------------------------------------
+	// Keys
+	// -----------------------------------------------------------------------------
+	var keys$2 = {
+	    // row 0
+	    '`': ['ё', ''],
+	    '~': ['Ё', '₴'],
+	    '#': ['№'],
+	    '$': [';'],
+	    '@': ['"'],
+	    '^': [':'],
+	    Ё: ['~', '₴'],
+	    '₴': ['~', 'Ё'],
+	    // row 1
+	    q: ['й'],
+	    w: ['ц'],
+	    e: ['у'],
+	    r: ['к'],
+	    t: ['е'],
+	    y: ['н'],
+	    u: ['г'],
+	    i: ['ш'],
+	    o: ['щ'],
+	    p: ['з'],
+	    '[': ['х'],
+	    ']': ['ъ', 'ї'],
+	    Q: ['Й'],
+	    W: ['Ц'],
+	    E: ['У'],
+	    R: ['К'],
+	    T: ['Е'],
+	    Y: ['Н'],
+	    U: ['Г'],
+	    I: ['Ш'],
+	    O: ['Щ'],
+	    P: ['З'],
+	    '{': ['Х'],
+	    '}': ['Ъ', 'Ї'],
+	    ц: ['w', 'ц'],
+	    у: ['e', 'у'],
+	    к: ['r', 'к'],
+	    е: ['t', 'е'],
+	    н: ['y', 'н'],
+	    г: ['u', 'г'],
+	    ш: ['i', 'ш'],
+	    щ: ['o', 'щ'],
+	    з: ['p', 'з'],
+	    х: ['[', 'х'],
+	    ъ: [']', 'ї'],
+	    ї: [']', 'ъ'],
+	    Ц: ['W', 'Ц'],
+	    У: ['E', 'У'],
+	    К: ['R', 'К'],
+	    Е: ['T', 'Е'],
+	    Н: ['Y', 'Н'],
+	    Г: ['U', 'Г'],
+	    Ш: ['I', 'Ш'],
+	    Щ: ['O', 'Щ'],
+	    З: ['P', 'З'],
+	    Х: ['{', 'Х'],
+	    Ъ: ['}', 'Ї'],
+	    Ї: ['}', 'Ъ'],
+	    // row 2
+	    a: ['ф'],
+	    s: ['ы', 'і'],
+	    d: ['в'],
+	    f: ['а'],
+	    g: ['п'],
+	    h: ['р'],
+	    j: ['о'],
+	    k: ['л'],
+	    l: ['д'],
+	    ';': ['ж'],
+	    "'": ['э', 'є'],
+	    A: ['Ф'],
+	    S: ['Ы', 'І'],
+	    D: ['В'],
+	    F: ['А'],
+	    G: ['П'],
+	    H: ['Р'],
+	    J: ['О'],
+	    K: ['Л'],
+	    L: ['Д'],
+	    ':': ['Ж'],
+	    '"': ['Э', 'Є'],
+	    ф: ['a', 'ф'],
+	    ы: ['s', 'і'],
+	    і: ['s', 'ы'],
+	    в: ['d', 'в'],
+	    а: ['f', 'а'],
+	    п: ['g', 'п'],
+	    р: ['h', 'р'],
+	    о: ['j', 'о'],
+	    л: ['k', 'л'],
+	    д: ['l', 'д'],
+	    ж: [';', 'ж'],
+	    э: ["'", 'є'],
+	    є: ["'", 'э'],
+	    Ф: ['A', 'Ф'],
+	    Ы: ['S', 'І'],
+	    І: ['S', 'Ы'],
+	    В: ['D', 'В'],
+	    А: ['F', 'А'],
+	    П: ['G', 'П'],
+	    Р: ['H', 'Р'],
+	    О: ['J', 'О'],
+	    Л: ['K', 'Л'],
+	    Д: ['L', 'Д'],
+	    Ж: [':', 'Ж'],
+	    Э: ['"', 'Є'],
+	    Є: ['"', 'Э'],
+	    '|': ['/'],
+	    // row 3
+	    z: ['я'],
+	    x: ['ч'],
+	    c: ['с'],
+	    v: ['м'],
+	    b: ['и'],
+	    n: ['т'],
+	    m: ['ь'],
+	    ',': ['б'],
+	    '.': ['ю'],
+	    Z: ['Я'],
+	    X: ['Ч'],
+	    C: ['С'],
+	    V: ['М'],
+	    B: ['И'],
+	    N: ['Т'],
+	    M: ['Ь'],
+	    '<': ['Б'],
+	    '>': ['Ю'],
+	    я: ['z', 'я'],
+	    ч: ['x', 'ч'],
+	    с: ['c', 'с'],
+	    м: ['v', 'м'],
+	    и: ['b', 'и'],
+	    т: ['n', 'т'],
+	    ь: ['m', 'ь'],
+	    б: [',', 'б'],
+	    ю: ['.', 'ю'],
+	    ё: ['`', 'ё'],
+	    Я: ['Z', 'Я'],
+	    Ч: ['X', 'Ч'],
+	    С: ['C', 'С'],
+	    М: ['V', 'М'],
+	    И: ['B', 'И'],
+	    Т: ['N', 'Т'],
+	    Ь: ['M', 'Ь'],
+	    Б: [',', 'Б'],
+	    Ю: ['.', 'Ю']
+	};
+	// -----------------------------------------------------------------------------
+	// Export
+	// -----------------------------------------------------------------------------
+	var enUkRu = alternativeValues$1(keys$2);
 
-                    console.log(value, values);
-                    vLength = value.length;
-                    for (let i = 0; i < vLength; i++) {
-                        values[i] = values[i] + value[i];
-                    }*/
-                }
-            };
-            for (var i = 0; i < length; i++) {
-                var key = letters[i];
-                if (keyboard.hasOwnProperty(key)) {
-                    _addValues(keyboard[key]);
-                }
-                else {
-                    _addValues([key]);
-                }
-            }
-            return __spreadArrays([original], values);
-        };
-    });
-
-    var layout = {
-        // 1 row
-        '`': '`',
-        '~': '~',
-        '@': '@',
-        '#': '#',
-        $: '$',
-        '^': '^',
-        '&': '&',
-        // 2 row
-        q: 'q',
-        w: 'w',
-        e: 'e',
-        r: 'r',
-        t: 't',
-        y: 'y',
-        u: 'u',
-        i: 'i',
-        o: 'o',
-        p: 'p',
-        '[': '[',
-        ']': ']',
-        Q: 'Q',
-        W: 'W',
-        E: 'E',
-        R: 'R',
-        T: 'T',
-        Y: 'Y',
-        U: 'U',
-        I: 'I',
-        O: 'O',
-        P: 'P',
-        '{': '{',
-        '}': '}',
-        // 3 row
-        a: 'a',
-        s: 's',
-        d: 'd',
-        f: 'f',
-        g: 'g',
-        h: 'h',
-        j: 'j',
-        k: 'k',
-        l: 'l',
-        ';': ';',
-        "'": "'",
-        A: 'A',
-        S: 'S',
-        D: 'D',
-        F: 'F',
-        G: 'G',
-        H: 'H',
-        J: 'J',
-        K: 'K',
-        L: 'L',
-        ':': ':',
-        '"': '"',
-        // 4 row
-        z: 'z',
-        x: 'x',
-        c: 'c',
-        v: 'v',
-        b: 'b',
-        n: 'n',
-        m: 'm',
-        ',': ',',
-        '.': '.',
-        Z: 'Z',
-        X: 'X',
-        C: 'C',
-        V: 'V',
-        B: 'B',
-        N: 'N',
-        M: 'M',
-        '<': '<',
-        '>': '>'
-    };
-
-    var layout$1 = {
-        // 1 row
-        '`': '',
-        '~': '₴',
-        '@': '"',
-        '#': '№',
-        $: ';',
-        '^': ':',
-        '&': '?',
-        // 2 row
-        q: 'й',
-        w: 'ц',
-        e: 'у',
-        r: 'к',
-        t: 'е',
-        y: 'н',
-        u: 'г',
-        i: 'ш',
-        o: 'щ',
-        p: 'з',
-        '[': 'х',
-        ']': 'ї',
-        Q: 'Й',
-        W: 'Ц',
-        E: 'У',
-        R: 'К',
-        T: 'Е',
-        Y: 'Н',
-        U: 'Г',
-        I: 'Ш',
-        O: 'Щ',
-        P: 'З',
-        '{': 'Х',
-        '}': 'Ї',
-        // 3 row
-        a: 'ф',
-        s: 'і',
-        d: 'в',
-        f: 'а',
-        g: 'п',
-        h: 'р',
-        j: 'о',
-        k: 'л',
-        l: 'д',
-        ';': 'ж',
-        "'": 'є',
-        A: 'Ф',
-        S: 'І',
-        D: 'В',
-        F: 'А',
-        G: 'П',
-        H: 'Р',
-        J: 'О',
-        K: 'Л',
-        L: 'Д',
-        ':': 'Ж',
-        '"': 'Є',
-        // 4 row
-        z: 'я',
-        x: 'ч',
-        c: 'с',
-        v: 'м',
-        b: 'и',
-        n: 'т',
-        m: 'ь',
-        ',': 'б',
-        '.': 'ю',
-        Z: 'Я',
-        X: 'Ч',
-        C: 'С',
-        V: 'М',
-        B: 'И',
-        N: 'Т',
-        M: 'Ь',
-        '<': 'Б',
-        '>': 'Ю'
-    };
-
-    var layout$2 = {
-        // 1 row
-        '`': 'ё',
-        '~': 'Ё',
-        '@': '"',
-        '#': '№',
-        $: ';',
-        '^': ':',
-        '&': '?',
-        // 2 row
-        q: 'й',
-        w: 'ц',
-        e: 'у',
-        r: 'к',
-        t: 'е',
-        y: 'н',
-        u: 'г',
-        i: 'ш',
-        o: 'щ',
-        p: 'з',
-        '[': 'х',
-        ']': 'ъ',
-        Q: 'Й',
-        W: 'Ц',
-        E: 'У',
-        R: 'К',
-        T: 'Е',
-        Y: 'Н',
-        U: 'Г',
-        I: 'Ш',
-        O: 'Щ',
-        P: 'З',
-        '{': 'Х',
-        '}': 'Ъ',
-        // 3 row
-        a: 'ф',
-        s: 'ы',
-        d: 'в',
-        f: 'а',
-        g: 'п',
-        h: 'р',
-        j: 'о',
-        k: 'л',
-        l: 'д',
-        ';': 'ж',
-        "'": 'э',
-        A: 'Ф',
-        S: 'Ы',
-        D: 'В',
-        F: 'А',
-        G: 'П',
-        H: 'Р',
-        J: 'О',
-        K: 'Л',
-        L: 'Д',
-        ':': 'Ж',
-        '"': 'Э',
-        // 4 row
-        z: 'я',
-        x: 'ч',
-        c: 'с',
-        v: 'м',
-        b: 'и',
-        n: 'т',
-        m: 'ь',
-        ',': 'б',
-        '.': 'ю',
-        Z: 'Я',
-        X: 'Ч',
-        C: 'С',
-        V: 'М',
-        B: 'И',
-        N: 'Т',
-        M: 'Ь',
-        '<': 'Б',
-        '>': 'Ю'
-    };
-
-    var getValues = crossKeyboardValues(layout$1, layout$2, layout);
-    var $input = document.getElementById('input');
-    var $output = document.getElementById('output');
-    if ($input != null && $output != null) {
-        var handleKeyup = function () {
-            var values = getValues($input.value);
-            $output.textContent = JSON.stringify(values, undefined, '  ');
-        };
-        $input.addEventListener('keyup', handleKeyup);
-        handleKeyup();
-    }
+	// -----------------------------------------------------------------------------
+	// -----------------------------------------------------------------------------
+	// Demo helper
+	// -----------------------------------------------------------------------------
+	var example = function (getValuesFn, inputId, outputId) {
+	    var $input = document.getElementById(inputId);
+	    var $output = document.getElementById(outputId);
+	    if ($input != null && $output != null) {
+	        var handleKeyup = function () {
+	            var values = getValuesFn($input.value);
+	            $output.textContent = JSON.stringify(values, undefined, '  ');
+	        };
+	        $input.addEventListener('keyup', handleKeyup);
+	        handleKeyup();
+	    }
+	};
+	// -----------------------------------------------------------------------------
+	// Initialize
+	// -----------------------------------------------------------------------------
+	example(enUk, 'input-en-uk', 'output-en-uk');
+	example(enRu, 'input-en-ru', 'output-en-ru');
+	example(enUkRu, 'input-en-uk-ru', 'output-en-uk-ru');
 
 }());
 //# sourceMappingURL=index.js.map
