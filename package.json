@@ -1,0 +1,71 @@
+{
+  "name": "cross-keyboard-values",
+  "version": "0.0.9-alpha",
+  "description": "Getting the desired text on different keyboard layouts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "prebuild": "del-cli ./dist",
+    "examples": "rollup -c ./rollup.config.examples.js",
+    "watch": "npm run examples -- --watch",
+    "test": "npm run prettier && npm run eslint",
+    "fix": "npm run prettier -- --write && npm run eslint -- --fix",
+    "eslint": "eslint ./src/**/*.ts --cache --cache-location ./.cache/.eslint",
+    "prettier": "prettier src/**/*.ts --check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WezomAgency/cross-keyboard-values.git"
+  },
+  "keywords": [
+    "keyboard",
+    "switch",
+    "values"
+  ],
+  "author": "Oleg Dutchenko <dutchenko.o.dev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WezomAgency/cross-keyboard-values/issues"
+  },
+  "homepage": "https://github.com/WezomAgency/cross-keyboard-values#readme",
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "wezom-relax-react-ts",
+      "plugin:prettier/recommended"
+    ]
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "bracketSpacing": true,
+    "printWidth": 90,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "tabWidth": 4,
+    "useTabs": true
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.28.0",
+    "@typescript-eslint/parser": "^2.28.0",
+    "del-cli": "^3.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-config-wezom-relax-react-ts": "^0.2.2-alpha",
+    "eslint-plugin-flowtype": "^4.7.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^3.0.0",
+    "from-cwd": "^1.0.1",
+    "glob": "^7.1.6",
+    "prettier": "^2.0.4",
+    "rollup": "^2.6.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "typescript": "^3.8.3"
+  }
+}
