@@ -1,6 +1,6 @@
 {
   "name": "cross-keyboard-values",
-  "version": "0.0.9-alpha",
+  "version": "0.1.0-beta",
   "description": "Getting the desired text on different keyboard layouts",
   "files": [
     "dist"

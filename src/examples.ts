@@ -4,6 +4,7 @@
 
 import enUk from './layouts/en-uk';
 import enRu from './layouts/en-ru';
+import ukRu from './layouts/uk-ru';
 import enUkRu from './layouts/en-uk-ru';
 
 // -----------------------------------------------------------------------------
@@ -33,4 +34,5 @@ const example = (
 
 example(enUk, 'input-en-uk', 'output-en-uk');
 example(enRu, 'input-en-ru', 'output-en-ru');
+example(ukRu, 'input-uk-ru', 'output-uk-ru');
 example(enUkRu, 'input-en-uk-ru', 'output-en-uk-ru');

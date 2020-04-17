@@ -13,7 +13,22 @@
 	<body>
 		<main class="center">
 			<h1>cross-keyboard-values</h1>
-			<p><em>Getting the desired text on different keyboard layouts</em></p>
+			<p>
+				<a href="https://github.com/WezomAgency/cross-keyboard-values/blob/master/LICENSE">
+					<img src="https://img.shields.io/github/license/WezomAgency/cross-keyboard-values"
+					 	alt="License MIT"></a>
+				<a href="https://www.npmjs.com/package/cross-keyboard-values">
+					<img src="https://img.shields.io/npm/v/cross-keyboard-values"
+						 alt="NPM package"></a>
+				<img src="https://github.com/WezomAgency/cross-keyboard-values/workflows/Test%20and%20Build/badge.svg"
+					 alt="Last build status">
+				<a href="https://github.com/WezomAgency/cross-keyboard-values/">
+					<img src="https://img.shields.io/badge/github-repo-lightgray"
+						 alt="GitHub repo"></a>
+			</p>
+			<p>
+				<em>Getting the desired text on different keyboard layouts</em>
+			</p>
 
 			<hr />
 
@@ -25,7 +40,9 @@
 			<pre id="output-en-uk"></pre>
 			<details>
 				<summary><code>import layout</code></summary>
-				<pre>import crossKeyboardValues from './layouts/en-uk';</pre>
+				<pre>
+<i>import</i> crossKeyboardValues <i>from</i> <span>'cross-keyboard-values/dist/en-uk'</span>;
+<i>const</i> [original, alternative] = <i>crossKeyboardValues(<span>yourString</span>)</i>;</pre>
 			</details>
 
 			<hr />
@@ -38,20 +55,38 @@
 			<pre id="output-en-ru"></pre>
 			<details>
 				<summary><code>import layout</code></summary>
-				<pre>import crossKeyboardValues from './layouts/en-ru';</pre>
+				<pre>
+<i>import</i> crossKeyboardValues <i>from</i> <span>'cross-keyboard-values/dist/en-ru'</span>;
+<i>const</i> [original, alternative] = <i>crossKeyboardValues(<span>yourString</span>)</i>;</pre>
+			</details>
+
+			<hr />
+
+			<h2 id="uk-ru">
+				<a href="#uk-ru" aria-hidden="true">#</a>
+				<label for="input-uk-ru">UK - RU</label>
+			</h2>
+			<input type="text" id="input-uk-ru" />
+			<pre id="output-uk-ru"></pre>
+			<details>
+				<summary><code>import layout</code></summary>
+				<pre>
+<i>import</i> crossKeyboardValues <i>from</i> <span>'cross-keyboard-values/dist/uk-ru'</span>;
+<i>const</i> [original, alternative] = <i>crossKeyboardValues(<span>yourString</span>)</i>;</pre>
 			</details>
 
 			<hr />
 
 			<h2 id="en-uk-ru">
 				<a href="#en-uk-ru" aria-hidden="true">#</a>
-				<label for="input-en-uk-ru">EN - UK - RU</l
-					abel></h2>
+				<label for="input-en-uk-ru">EN - UK - RU</label></h2>
 			<input type="text" id="input-en-uk-ru" />
 			<pre id="output-en-uk-ru"></pre>
 			<details>
 				<summary><code>import layout</code></summary>
-				<pre>import crossKeyboardValues from './layouts/en-uk-ru';</pre>
+				<pre>
+<i>import</i> crossKeyboardValues <i>from</i> <span>'cross-keyboard-values/dist/en-uk-ru'</span>;
+<i>const</i> [original, alternative1, alternative2] = <i>crossKeyboardValues(<span>yourString</span>)</i>;</pre>
 			</details>
 
 			<hr />
